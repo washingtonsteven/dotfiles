@@ -1,0 +1,22 @@
+# General
+## Access to drives from WSL
+alias ddrive="cd /mnt/d/; pwd"
+alias cdrive="cd /mnt/c/; pwd"
+alias projects="cd /mnt/d/Documents/Projects; pwd"
+## Common configs
+alias hyperconfig="code /mnt/c/Users/<username>/AppData/Roaming/Hyper/.hyper.js"
+alias zshrc="code ~/.zshrc"
+
+# Suffixes
+alias -s md=code
+alias -s js=code
+alias -s jsx=code
+alias -s ts=code
+alias -s css=code
+alias -s html=code
+alias -s json=code
+alias -s yml=code
+
+# Projects
+alias genmo="cd /mnt/d/Documents/Projects/app/genmo-v2; pwd"
+alias {stevenwash,site}="cd /mnt/d/Documents/Projects/app/stevenwa-sh; pwd"
