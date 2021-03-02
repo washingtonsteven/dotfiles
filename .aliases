@@ -1,5 +1,5 @@
 # General
-## Access to drives from WSL
+## Access to drives from WSL (adapt for other OSes)
 alias ddrive="cd /mnt/d/; pwd"
 alias cdrive="cd /mnt/c/; pwd"
 alias projects="cd /mnt/d/Documents/Projects; pwd"
