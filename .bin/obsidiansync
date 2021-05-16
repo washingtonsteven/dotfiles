@@ -1,0 +1,38 @@
+#!/bin/bash
+
+set -e
+
+echo "cd"
+cd /mnt/d/Documents/Obsidian/Home 
+pwd
+
+echo "git status"
+git status
+
+CHANGED=$(git diff-index --name-only HEAD --)
+
+if [ -n "$CHANGED" ]; then
+  dt=$(date +"%Y-%m-%d %H:%M:%S");
+  msg="Obsidian Vault Sync $dt";
+  
+  echo "git add .";
+  git add .
+
+  echo "git commit -am $msg"
+  git commit -am "$msg"
+else
+  echo "No local changes. Not committing"
+fi
+
+echo "git log"
+git --no-pager log --decorate=short --pretty=oneline -n1
+
+echo "git pull --rebase"
+git pull --rebase
+
+if [ -n "$CHANGED" ]; then
+  echo "git push"
+  git push
+else
+  echo "No local changes. Not pushing."
+fi
